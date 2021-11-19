@@ -1,0 +1,33 @@
+#! /bin/sh
+
+#Autostart
+killall sxhkd; sxhkd &
+killall picom; picom &
+killall dunst; dunst &
+killall xsettingsd; xsettingsd &
+feh --bg-scale $HOME/Pictures/wallpapers/mountain.jpg
+xsetroot -cursor_name right_ptr &
+$HOME/.config/polybar/launch.sh &
+#$HOME/clash &
+
+
+#variable
+alias bc='bspc config'
+alias br='bspc rule'
+
+#Workspaces
+bspc monitor -d 1 2 3 4 5 6 
+
+#Others
+bc border_width 0
+bc window_gap 13
+bc split_ratio 10
+bc borderless_monocle true
+bc gapless_monocle true
+bc focus_follows_pointer true
+
+#Rules
+br -a Zathura state=tiled
+br -a Lxappearance state=floating
+br -a Blueman-manager state=floating
+br -a Pavucontrol state=floating
